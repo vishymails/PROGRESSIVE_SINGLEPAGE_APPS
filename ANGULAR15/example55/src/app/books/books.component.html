@@ -1,0 +1,124 @@
+<h2>
+    Books Present in my Book Store 
+</h2>
+
+
+
+
+<h3> Pipe Demos </h3>
+
+<div>{{companyName | uppercase }}</div>
+<div>{{companyName | lowercase }}</div>
+
+<div>{{todaysdate | date:'d/M/y'}}</div>
+
+<div>Currency Pipe <br/>
+    {{ 678292.8989 | currency:"INR" }}<br/>
+    {{ 678292.8989 | currency:"SGD" }}<br/>
+    {{ 678292.8989 | currency:"GBP" }}
+</div>
+<br/>
+<br/>
+<div>Time 
+{{ todaysdate | date:'shortTime'}}
+
+</div>
+
+<div>
+    decimal pipe 
+
+    {{ 9898.9898989899898 | number: '8.4-4' }}
+</div>
+
+
+<div>
+    JSON Pipe 
+
+    {{ datajson | json }}
+</div>
+
+<div>
+    Slice Pipe 
+
+    {{ companies | slice:2:4 }}
+</div>
+
+<div>
+    percentage pipe 
+
+    {{ 56.890000 | percent }}
+</div>
+
+<div>
+    Other Date pipes 
+
+    {{ todaysdate | date:'shortDate' }} <br />
+    Full date :- {{todaysdate | date:'fullDate' }} <br/> 
+   Formatted date:- {{todaysdate | date:'M/dd/yyyy'}} <br/> 
+   Hours and minutes:- {{todaysdate | date:'h:mm'}} 
+</div>
+
+
+<div> 
+    Chained pipes <br />
+
+    Date with uppercase :- {{todaysdate | date:'fullDate' | uppercase}} <br/>
+    Date with lowercase :- {{todaysdate | date:'medium' | lowercase}} <br/>  
+ </div>
+
+
+ <div> 
+
+    Slice Pipes 
+    <br />
+
+    <h3>Start index:- {{Fruits | slice:2}}</h3> 
+    <h4>Start and end index:- {{Fruits | slice:1:4}}</h4> 
+    <h5>Negative index:- {{Fruits | slice:-2}}</h5> 
+    <h6>Negative start and end index:- {{Fruits | slice:-4:-2}}</h6> 
+ </div>
+
+<br/><br/>
+
+<button (click)="isShowing = !isShowing">
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
+</button>
+
+
+
+<input type="text" [(ngModel)] = "data" />
+
+<br />
+Data Entered in to the text field : {{ data }}
+
+<!--
+<ul *ngIf="isShowing">
+    <li>
+        <img [src]="src" 
+        [alt] = "name" width="100" />
+        {{ name }} by {{ author }}
+    </li>
+    <li>
+        <img [src]="src2" 
+        [alt] = "name2" width="100" />
+        {{ name2 }} by {{ author2 }}
+    </li>
+</ul>
+
+-->
+
+<ul *ngIf="isShowing">
+
+    <ng-container *ngFor="let book of books; let i = index">
+    <li>
+        {{ i + 1 }}
+        <img [src]="book.src" 
+        [alt] = "book.name" width="100" />
+        {{ book.name }} by {{ book.author }}
+        <h4>{{ book.price | currency:"INR" }}</h4>
+    </li>
+
+    </ng-container>
+</ul>
+
