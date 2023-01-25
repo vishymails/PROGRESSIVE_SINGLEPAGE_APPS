@@ -11,6 +11,9 @@ function f() {
         console.log("x in block scope is :", x);
         console.log("y in block scope is :", y);
         console.log("z in block scope is :", z);
+
+        y = 400;
+       // z = 500;
         
 
     }
