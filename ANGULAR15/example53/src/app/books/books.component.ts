@@ -31,6 +31,12 @@ export class BooksComponent {
         name : "A Naturalist’s Guide to the Mammals of India ", 
         author : "Bikram Grewal",
         src : "https://m.media-amazon.com/images/I/51108S+MApL._SX353_BO1,204,203,200_.jpg"
+      },
+      {
+
+        name : "A Naturalist’s Guide to the Mammals of India ", 
+        author : "Bikram Grewal",
+        src : "https://m.media-amazon.com/images/I/51108S+MApL._SX353_BO1,204,203,200_.jpg"
       }
 
 
