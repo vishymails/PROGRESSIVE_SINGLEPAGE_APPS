@@ -1,0 +1,22 @@
+<h2>
+    Books Present in my Book Store 
+</h2>
+
+<button (click)="handleClick()" (mouseover)="handleMouseOver()" [disabled] = "isDisabled">Show Books</button>
+
+<input type="text" [(ngModel)] = "data" />
+
+<br />
+Data Entered in to the text field : {{ data }}
+<ul>
+    <li>
+        <img [src]="src" 
+        [alt] = "name" width="100" />
+        {{ name }} by {{ author }}
+    </li>
+    <li>
+        <img [src]="src2" 
+        [alt] = "name2" width="100" />
+        {{ name2 }} by {{ author2 }}
+    </li>
+</ul>
